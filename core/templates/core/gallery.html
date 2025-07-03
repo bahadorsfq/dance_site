@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}گالری تصاویر{% endblock %}
+{% block content %}
+<h1 class="mb-4">🖼️ گالری تصاویر</h1>
+<div class="row">
+    {% for image in images %}
+        <p>تعداد تصاویر: {{ images|length }}</p>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.title }}">
+                <div class="card-body">
+                    <p class="card-text text-center">{{ image.title }}</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+  <p>هیچ تصویری برای نمایش وجود ندارد.</p>
+    {% endfor %}
+</div>
+{% endblock %}
+
+

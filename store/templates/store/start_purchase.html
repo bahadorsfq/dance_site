@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}شروع خرید{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center">
+    <h3 class="mb-3">🎁 خرید پکیج: {{ package.title }}</h3>
+    <p class="text-muted">
+        خریدار گرامی، پر کردن فرم عضویت به شما کمک می‌کند که در صورت پاک شدن فایل‌ها، بتوانید دوباره ویدئوهای خریداری‌شده را دانلود کنید.
+        <br>
+        همچنین لیست خریدهای شما در پنل اختصاصی‌تان ذخیره خواهد شد.
+    </p>
+
+    <div class="mt-4 d-flex justify-content-center gap-3">
+        <a href="{% url 'store:register_view' %}?next={% url 'store:start_payment' package.pk %}" class="btn btn-success btn-lg">
+            ثبت‌نام و ادامه خرید
+        </a>
+        
+        <a href="{% url 'store:start_payment' package.pk %}" class="btn btn-outline-secondary btn-lg">
+            ادامه خرید بدون عضویت
+        </a>
+    </div>
+</div>
+{% endblock %}
+

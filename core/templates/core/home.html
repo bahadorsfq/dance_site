@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}خانه{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-image: url("{% static 'images/home.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="text-center text-white">
+        <h1 class="mb-4">به سایت آموزش رقص خوش آمدید 💃</h1>
+        <p class="lead">در اینجا می‌توانید با مربی آشنا شوید، تصاویر را ببینید و پکیج‌های آموزشی تهیه کنید.</p>
+    </div>
+{% endblock %}
+
+
+

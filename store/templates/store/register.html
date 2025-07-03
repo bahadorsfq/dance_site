@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}عضویت در سایت{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h3 class="text-center mb-4">فرم عضویت</h3>
+    
+    <form method="post" class="mx-auto" style="max-width: 500px;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="next" value="{{ next }}">
+        <button type="submit" class="btn btn-primary btn-block w-100 mt-3">ثبت‌نام و ادامه خرید</button>
+    </form>
+</div>
+{% endblock %}
+

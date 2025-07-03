@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}فروشگاه پکیج‌ها{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h2 class="mb-4">🛍️ پکیج‌های آموزشی</h2>
+    <div class="row">
+        {% for package in packages %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+                <img src="{{ package.cover_image.url }}" class="card-img-top" alt="{{ package.title }}">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ package.title }}</h5>
+                    <p class="text-muted">💰 {{ package.price }} تومان</p>
+                    {% if package.is_active %}
+                        <a href="{% url 'store:package_detail' package.pk %}" class="btn btn-success mt-auto">مشاهده و خرید</a>
+                    {% else %}
+                        <p class="text-danger mt-auto">⛔ غیرفعال</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+            <p>هیچ پکیجی موجود نیست.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+
+

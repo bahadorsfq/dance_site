@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}خرید موفق{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center">
+    <h3 class="text-success mb-3">✅ خرید با موفقیت انجام شد!</h3>
+    <p class="text-muted">پکیج "{{ package.title }}" با موفقیت به لیست خریدهای شما افزوده شد.</p>
+    <a href="{% url 'store:my_purchases' %}" class="btn btn-primary mt-3">دیدن خریدهای من</a>
+</div>
+{% endblock %}
+

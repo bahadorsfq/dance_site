@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}{{ package.title }}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <img src="{{ package.cover_image.url }}" class="img-fluid rounded shadow-lg border border-light" alt="{{ package.title }}">
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h2 class="text-center text-primary mb-3">{{ package.title }}</h2>
+            <hr class="border border-primary opacity-50">
+            <p class="text-muted fs-5">💰 قیمت: <strong>{{ package.price }} تومان</strong></p>
+            <p class="fs-6">{{ package.description }}</p>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-lg btn-secondary px-4 py-2 shadow disabled">
+                    💳 پرداخت آنلاین موقتاً غیرفعال است
+                </a> 
+                <div class="alert alert-info mt-3">
+                    💡 پرداخت آنلاین موقتاً غیرفعال است. به‌زودی این امکان فعال خواهد شد.
+                </div>
+                                                           
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+

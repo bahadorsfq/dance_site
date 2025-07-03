@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}تماس با ما{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">📬 تماس با ما</h1>
+
+{% if success %}
+<div class="alert alert-success">پیام شما با موفقیت ارسال شد!</div>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">ارسال</button>
+</form>
+
+<hr class="my-5">
+
+<h2 class="mb-3">📱 راه‌های ارتباطی</h2>
+<ul class="list-group">
+    {% for contact in contacts %}
+        <li class="list-group-item">
+            <strong>{{ contact.get_platform_display }}:</strong>
+            <a href="{{ contact.link }}" target="_blank">{{ contact.label }}</a>
+        </li>
+    {% empty %}
+        <li class="list-group-item">اطلاعاتی وارد نشده است.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+

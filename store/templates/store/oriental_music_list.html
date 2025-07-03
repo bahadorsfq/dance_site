@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}موزیک‌های اوریانتال{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center text-danger mb-4">🎶 موزیک‌های اوریانتال</h2>
+
+    {% if musics %}
+        <div class="list-group">
+            {% for music in musics %}
+                <div class="list-group-item mb-3 shadow rounded">
+                    <h5>{{ music.title }}</h5>
+                    <p class="text-muted">{{ music.description }}</p>
+                    <audio controls class="w-100 mb-2">
+                        <source src="{{ music.audio_file.url }}" type="audio/mpeg">
+                        مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+                    </audio>
+                    <a href="{{ music.audio_file.url }}" download class="btn btn-sm btn-outline-primary">⬇️ دانلود</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center text-muted">موزیکی هنوز بارگذاری نشده است.</p>
+    {% endif %}
+</div>
+{% endblock %}
