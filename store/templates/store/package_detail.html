@@ -18,6 +18,15 @@
                 </a> 
                 <div class="alert alert-info mt-3">
                     💡 پرداخت آنلاین موقتاً غیرفعال است. به‌زودی این امکان فعال خواهد شد.
+                    {% if package.video_url %}
+                        <h5>ویدئو:</h5>
+                        <video width="100%" height="auto" controls controlsList="nodownload">
+                            <source src="{{ package.video_url }}" type="video/mp4">
+                            مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+                        </video>
+                    {% else %}
+                        <p>ویدئویی برای این پکیج موجود نیست.</p>
+                    {% endif %}
                 </div>
                                                            
             </div>

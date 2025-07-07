@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Package
+from .models import UserPackage
 from .models import Purchase
 from .models import OrientalMusic
 from .forms import RegisterForm
@@ -63,8 +64,15 @@ def package_list(request):
     return render(request, 'store/package_list.html', {'packages': packages})
 
 
+@login_required
 def package_detail(request, pk):
     package = get_object_or_404(Package, pk=pk)
+    # چک کن که آیا کاربر برای این پکیج فعال است؟
+    try:
+        user_package = UserPackage.objects.get(user=request.user, package=package, activated=True)
+    except UserPackage.DoesNotExist:
+        return HttpResponse("شما اجازه دسترسی به این ویدئو را ندارید. لطفاً ابتدا عضو شوید یا فعال سازی دریافت کنید.")
+
     return render(request, 'store/package_detail.html', {'package': package})
 
 @login_required
