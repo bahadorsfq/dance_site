@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}ورود{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center">ورود</h2>
+    <form method="post" class="w-50 mx-auto">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-2">ورود</button>
+    </form>
+    <p class="text-center mt-3">ثبت‌نام نکرده‌اید؟ <a href="{% url 'store:register_view' %}">ثبت‌نام</a></p>
+</div>
+{% endblock %}

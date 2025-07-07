@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.db import models
+from django.contrib.auth import views as auth_views
 
 app_name = 'store'
 
@@ -14,7 +15,9 @@ urlpatterns = [
     path('register/', views.register_view, name='register_view'),
     path('start-payment/<int:pk>/', views.start_payment, name='start_payment'),
     path('verify-payment/', views.verify_payment, name='verify_payment'),
-    
+    path('login/', auth_views.LoginView.as_view(template_name='store/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
+
 ]
 
 
