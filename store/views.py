@@ -10,7 +10,7 @@ import requests
 from django.shortcuts import redirect, get_object_or_404
 from django.http import HttpResponse
 from django.conf import settings
-
+from store.models import Package, UserPackage
 def start_payment(request, pk):
     return HttpResponse("💳 پرداخت آنلاین موقتاً غیرفعال است. لطفاً بعداً مراجعه کنید.")
 
@@ -63,6 +63,21 @@ def package_list(request):
     packages = Package.objects.all()  
     return render(request, 'store/package_list.html', {'packages': packages})
 
+def package_detail(request, pk):
+    package = get_object_or_404(Package, pk=pk)
+    
+    # پیش‌فرض: اجازه دیدن ویدئو نداره
+    can_view_video = False
+
+    if request.user.is_authenticated:
+        can_view_video = UserPackage.objects.filter(
+            user=request.user, package=package, activated=True
+        ).exists()
+
+    return render(request, 'store/package_detail.html', {
+        'package': package,
+        'can_view_video': can_view_video
+    })
 
 @login_required
 def package_detail(request, pk):
