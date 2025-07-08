@@ -13,7 +13,7 @@
                     <h5 class="card-title">{{ package.title }}</h5>
                     <p class="text-muted">💰 {{ package.price }} تومان</p>
                     {% if package.is_active %}
-                        <a href="{% url 'store:package_detail' package.pk %}" class="btn btn-success mt-auto">مشاهده و خرید</a>
+                    <a href="{% url 'store:start_purchase' package.pk %}" class="btn btn-success mt-auto">مشاهده و خرید</a>
                     {% else %}
                         <p class="text-danger mt-auto">⛔ غیرفعال</p>
                     {% endif %}
