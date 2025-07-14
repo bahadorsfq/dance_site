@@ -1,12 +1,21 @@
 from django.db import models
 
+class Album(models.Model):
+    name = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
 class GalleryImage(models.Model):
-    title = models.CharField(max_length=100)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, null=True, blank=True)
     image = models.ImageField(upload_to='gallery/')
+    caption = models.CharField(max_length=255, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.caption or "تصویر بدون عنوان"
+
 
 class ContactInfo(models.Model):
     PLATFORM_CHOICES = [

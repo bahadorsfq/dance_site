@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import GalleryImage
+from .models import GalleryImage, Album
 from .models import ContactInfo
 from .forms import ContactForm
 
@@ -15,8 +15,8 @@ def contact(request):
     return render(request, 'core/contact.html', {'form': form, 'contacts': contacts})
 
 def gallery(request):
-    images = GalleryImage.objects.order_by('-uploaded_at')
-    return render(request, 'core/gallery.html', {'images': images})
+    albums = Album.objects.prefetch_related('galleryimage_set').order_by('-created_at')
+    return render(request, 'core/gallery.html', {'albums': albums})
 
 def home(request):
     return render(request, 'core/home.html')

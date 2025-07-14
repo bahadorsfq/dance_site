@@ -1,22 +1,35 @@
 {% extends 'base.html' %}
 {% block title %}گالری تصاویر{% endblock %}
+
 {% block content %}
-<h1 class="mb-4">🖼️ گالری تصاویر</h1>
-<div class="row">
-    {% for image in images %}
-        <p>تعداد تصاویر: {{ images|length }}</p>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.title }}">
-                <div class="card-body">
-                    <p class="card-text text-center">{{ image.title }}</p>
+<div class="container py-5">
+    <h2 class="text-center mb-4">📸 گالری تصاویر دسته‌بندی‌شده</h2>
+
+    {% if albums %}
+        {% for album in albums %}
+            <div class="mb-5">
+                <h4 class="text-primary border-bottom pb-2 mb-3">{{ album.name }}</h4>
+                <div class="row">
+                    {% for image in album.galleryimage_set.all %}
+                        <div class="col-md-3 mb-4">
+                            <div class="card shadow-sm">
+                                <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.caption }}">
+                                {% if image.caption %}
+                                    <div class="card-body p-2">
+                                        <p class="card-text text-muted small">{{ image.caption }}</p>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
-        </div>
-        {% empty %}
-  <p>هیچ تصویری برای نمایش وجود ندارد.</p>
-    {% endfor %}
+        {% endfor %}
+    {% else %}
+        <p class="text-center text-muted">هیچ آلبومی یافت نشد.</p>
+    {% endif %}
 </div>
 {% endblock %}
+
 
 
