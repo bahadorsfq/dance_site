@@ -12,7 +12,8 @@ A professional website for selling dance teaching packages with protected video 
 | | | |
 |--|--|--|
 | ![Home](screenshots/home.jpg) | ![Gallery](screenshots/gallery.jpg) | ![Store](screenshots/contactes.jpg) |
-| ![My Purchases](screenshots/my_purchases.jpg) | ![Phone 1](screenshots/phone1.jpg) | ![Phone 2](screenshots/phone2.jpg) |
+| !![My Purchases](screenshots/my_purchases.jpg)
+ | ![Phone 1](screenshots/phone1.jpg) | ![Phone 2](screenshots/phone2.jpg) |
 
 > 📂 Make sure your images are inside the `screenshots/` folder in the repo!
 
@@ -50,7 +51,8 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 🩰 Dance Training Website – فارسی
-یک وب‌سایت حرفه‌ای برای آموزش رقص، با امکانات کامل شامل فروش پکیج ویدئویی، گالری تصاویر، موزیک‌های اوریانتال، ثبت‌نام کاربران، سوابق خرید، و پنل مدیریت محتوا. طراحی کاملاً واکنش‌گرا و سازگار با موبایل‌های اندرویدی.
+
+A professional Persian-language website for dance education, offering a complete platform including video package sales, image galleries, oriental music collections, user registration, purchase history, and a full-featured admin panel. Fully responsive and optimized for Android mobile devices.
 
 📁 Project Structure
 csharp
