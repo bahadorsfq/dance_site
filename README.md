@@ -12,7 +12,7 @@ A professional website for selling dance teaching packages with protected video 
 | | | |
 |--|--|--|
 | ![Home](screenshots/home.jpg) | ![Gallery](screenshots/gallery.jpg) | ![Store](screenshots/contactes.jpg) |
-| ![My Purchases](screenshots/my_purchases.jpg) | ![Phone 1](screenshots/phone1.jpg) | ![Phone 2](screenshots/phone2.jpg) |
+| ![My Purchases](screenshots/my purchases.jpg) | ![Phone 1](screenshots/phone1.jpg) | ![Phone 2](screenshots/phone2.jpg) |
 
 > 📂 Make sure your images are inside the `screenshots/` folder in the repo!
 
