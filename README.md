@@ -1,19 +1,22 @@
-# Dance Teaching Website 💃
+# 💃 Dance Teaching Website
 
 A professional website for selling dance teaching packages with protected video access, user registration, gallery, and admin control – built with Django & Bootstrap.
 
 ## 🔗 Live Demo
 👉 [https://bahadorleo.pythonanywhere.com](https://bahadorleo.pythonanywhere.com)
 
+---
+
 ## 📸 Screenshots
-<div align="center">
-  <img src="contactes.jpg" width="600" alt="Homepage" />
-  <img src="gallery.jpg" width="600" alt="Store Page" />
-  <img src="home.jpg" width="600" alt="Package Detail" />
-  <img src="my purchases.jpg" width="600" alt="My Packages" />
-  <img src="phone1.jpg" width="600" alt="Contact Page" />
-  <img src="phone2.jpg" width="600" alt="Contact Page" />
-</div>
+
+| | | |
+|--|--|--|
+| ![Home](screenshots/home.jpg) | ![Gallery](screenshots/gallery.jpg) | ![Store](screenshots/contactes.jpg) |
+| ![My Purchases](screenshots/my_purchases.jpg) | ![Phone 1](screenshots/phone1.jpg) | ![Phone 2](screenshots/phone2.jpg) |
+
+> 📂 Make sure your images are inside the `screenshots/` folder in the repo!
+
+---
 
 ## ⚙ Features
 
@@ -24,12 +27,17 @@ A professional website for selling dance teaching packages with protected video 
 - 📬 Contact form + Admin-editable social media links
 - 📱 Responsive mobile-friendly UI (RTL design)
 
+---
+
 ## 🛠 Tech Stack
 
-- Django 4.2 (Python 3.8)
+- Python 3.8+
+- Django 4.2
 - Bootstrap 5 (RTL)
 - SQLite3
-- Hosted on PythonAnywhere (paid tier)
+- PythonAnywhere (Paid Tier)
+
+---
 
 ## 🚀 Getting Started (Dev Mode)
 
@@ -41,47 +49,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
-
-
-🩰 Dance Training Website
-A full-featured Persian-language website built with Django, designed for an online dance instructor. It provides video course packages, image galleries, music collections, user registration, purchase history, and admin-managed content — all presented with a responsive, mobile-friendly design.
-
-🌟 Features
-🛍️ Store Page: List and preview training packages with images, descriptions, and prices
-
-💾 Secure Video Streaming: Purchased packages show video content only to the respective user — no downloads
-
-📸 Gallery Section: Admin-uploaded categorized photo albums
-
-🎵 Oriental Music Page: Collection of music tracks, editable via admin
-
-👤 User Registration/Login: Custom login and registration system
-
-💼 Admin Panel: Manage packages, users, galleries, music, and more
-
-💬 Contact Page: Form and contact info managed from admin
-
-📱 Responsive Design: Optimized for desktop and Android mobile devices
-
-📸 Screenshots
-Home Page	Store Page	My Purchases
-
-Login	Gallery	Package Detail
-
-⚙️ Technologies Used
-Python 3.8+
-
-Django 4.2
-
-SQLite
-
-HTML5, Bootstrap 5 (RTL)
-
-Deployed on PythonAnywhere
+🩰 Dance Training Website – فارسی
+یک وب‌سایت حرفه‌ای برای آموزش رقص، با امکانات کامل شامل فروش پکیج ویدئویی، گالری تصاویر، موزیک‌های اوریانتال، ثبت‌نام کاربران، سوابق خرید، و پنل مدیریت محتوا. طراحی کاملاً واکنش‌گرا و سازگار با موبایل‌های اندرویدی.
 
 📁 Project Structure
 csharp
-Copy code
+Copy
+Edit
 dance_site/
 ├── core/               # Gallery, contact, about
 ├── store/              # Store, purchase logic, registration
@@ -94,4 +68,4 @@ dance_site/
 └── db.sqlite3
 🧑‍💻 Developer
 This project was built with ❤️ by Bahador Sfq
-Want to hire me? Get in touch.
+📩 Want to hire me? Feel free to reach out!
